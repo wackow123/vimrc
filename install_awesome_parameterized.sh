@@ -27,6 +27,11 @@ if [ "$2" = "--all" ]; then
         echo $VIMRC > ${homepath}/.vimrc
         unset IFS
         echo "Installed the Ultimate Vim configuration for user $user successfully! Enjoy :-)"
+
+
+        mkdir -p ${homepath}/.vim_runtime/pack/plugins/start
+        cp -fr $1/pack/plugins/start ${homepath}/.vim_runtime/pack/plugins
+
     done
     echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
     exit 0
@@ -39,6 +44,9 @@ else
         echo $VIMRC > ${homepath}/.vimrc
         unset IFS
         echo "Installed the Ultimate Vim configuration for user $user successfully! Enjoy :-)"
+
+        mkdir -p ${homepath}/.vim_runtime/pack/plugins/start
+        cp -fr $1/pack/plugins/start ${homepath}/.vim_runtime/pack/plugins
     done
     exit 0
 fi
